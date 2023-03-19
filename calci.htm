@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            border: 3px solid rgb(249, 10, 10);
+            width: 700px;
+            text-align: center;
+            color: rgb(8, 133, 243);
+            border-radius: 23px;
+            background-color: aliceblue;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .calculator:hover {
+            background-color: aqua;
+            font-size: 1rem;
+            border: 2px solid rgb(246, 145, 14);
+            font-weight: bolder;
+            font-style: normal;
+
+        }
+
+        input {
+            border: 1px solid rgb(250, 144, 6);
+            font-size: 1rem;
+            font-style: italic;
+            font-size: large;
+            background-color: antiquewhite;
+            border-radius: 2px;
+            width: 50px;
+            height: 40px;
+            margin: -1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Calculator Using HTML, CSS & JavaScript</h2>
+        <form>
+            <input style="width: 210px;height: 40px;" type="text" name="display" id="output"> <br> <br>
+            <input type="button" value="1" onclick="display.value += '1'">
+            <input type="button" value="2" onclick="display.value += '2'">
+            <input type="button" value="3" onclick="display.value += '3'">
+            <input type="button" value="+" onclick="display.value += '+'">
+            <br> <br>
+            <input type="button" value="4" onclick="display.value += '4'">
+            <input type="button" value="5" onclick="display.value += '5'">
+            <input type="button" value="6" onclick="display.value += '6'">
+            <input type="button" value="-" onclick="display.value += '-'">
+            <br> <br>
+            <input type="button" value="7" onclick="display.value += '7'">
+            <input type="button" value="8" onclick="display.value += '8'">
+            <input type="button" value="9" onclick="display.value += '9'">
+            <input type="button" value="*" onclick="display.value += '*'">
+            <br> <br>
+            <input type="button" value="0" onclick="display.value += '0'">
+            <input type="button" value="/" onclick="display.value += '/'">
+            <input type="button" value="=" onclick="calculate()">
+            <input type="button" value="C" onclick="clearScreen()">
+        </form>
+    </div>
+    <script>
+
+        function calculate() {
+            let output = document.getElementById("output");
+            let result = eval(output.value);
+            output.value = result;
+        }
+
+        function clearScreen() {
+            document.getElementById("output").value = "";
+        }
+    </script>
+</body>
+
+</html>
